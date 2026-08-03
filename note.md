@@ -27,7 +27,7 @@ Node.js का एक मुख्य हिस्सा है, जहाँ �
   Unused code ko remove karke sirf zaroori code ko final bundle me rakhna.
 
   # Tree Shaking ka fayda :
-     Bundle size chhota hota hai.
-     Website jaldi load hoti hai.
-     Kam data download hota hai.
-     Better performance milti hai.
+  Bundle size chhota hota hai.
+  Website jaldi load hoti hai.
+  Kam data download hota hai.
+  Better performance milti hai.
