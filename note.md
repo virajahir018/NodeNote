@@ -1,7 +1,15 @@
 # Thread and Call stack?
 
 THREAD : 
-यह एक सिंगल प्रोसेस (Execution Thread) है जो आपके JavaScript कोड को असल में चलाता है (Execute करता है)। Node.js सिंगल-थ्रेडेड है, यानी कोड को प्रोसेस करने के लिए केवल एक ही मेन थ्रेड होता है।
+Thread का मतलब है कोड को Execute (चलाने) का रास्ता।
+
+सरल भाषा में:
+
+Thread = वह worker जो आपके instructions एक-एक करके execute करता है।
+
+JavaScript Single Threaded है
+
+JavaScript में केवल एक Main Thread होता है।
 
 इसका काम कोड की लाइनों को पढ़ना, कैलकुलेशन करना और वेरिएबल स्टोर करना है। यह पूरी मेहनत (CPU processing) करता है।
 
@@ -13,6 +21,9 @@ CALL STACK :
 # कॉलबैक क्यू (Callback Queue)?
 Node.js का एक मुख्य हिस्सा है, जहाँ वे सभी एसिंक्रोनस कार्य (Asynchronous tasks) इंतज़ार करते हैं जिनका बैकग्राउंड प्रोसेस पूरा हो चुका है और अब उन्हें वापस कॉल स्टैक (Call Stack) में जाकर रन (Run) होना है।इसे टास्क क्यू (Task Queue) भी कहा जाता है। यह FIFO (First In, First Out) के नियम पर काम करता है, यानी जो काम पहले तैयार होगा, वह पहले कॉल स्टैक में जाएगा।यह कैसे काम करता है? (Step-by-Step)बैकग्राउंड प्रोसेस: जब Node.js कोई एसिंक्रोनस काम (जैसे setTimeout या फ़ाइल पढ़ना) शुरू करता है, तो उसे बैकग्राउंड (Web APIs / Thread Pool) में भेज देता है ताकि कॉल स्टैक खाली रहे।क्यू में आना: जैसे ही बैकग्राउंड में वह काम (जैसे टाइमर पूरा होना) खत्म होता है, उसका कॉलबैक फ़ंक्शन कॉलबैक क्यू में आकर लाइन में लग जाता है।कॉल स्टैक में जाना: इवेंट लूप (Event Loop) लगातार यह देखता रहता है कि क्या कॉल स्टैक खाली है? जैसे ही कॉल स्टैक पूरी तरह खाली होता है, इवेंट लूप कॉलबैक क्यू से पहले फ़ंक्शन को उठाकर कॉल स्टैक में भेज देता है।
 
+# Module kya hai ?
+  Module ka matlab hota hai JavaScript code ko alag-alag files me divide karna, taaki code clean, reusable aur maintainable rahe.
+
 # CJS AND ESM :
   CJS और ESM जावास्क्रिप्ट में कोड को व्यवस्थित और शेयर (import/export) करने के दो अलग-अलग तरीके (मॉड्यूल सिस्टम) हैं।
 
@@ -22,8 +33,6 @@ Node.js का एक मुख्य हिस्सा है, जहाँ �
   # ESM (ECMAScript Modules) क्या है?
   यह जावास्क्रिप्ट का नया और आधिकारिक (Official) मानक तरीका है।इसमें कोड को जोड़ने के लिए import और बाहर भेजने के लिए export कीवर्ड का उपयोग होता है।यह एसिंक्रोनस(Asynchronous) तरीके से काम करता है, जिससे ब्राउज़र और आधुनिक रनटाइम में फाइलें तेजी से लोड होती हैं। इसमें 'ट्री-शेकेबिलिटी' (Tree-shaking) की सुविधा भी मिलती है, यानी जोकोड काम का नहीं है वह हट जाता है।
 
-# Module kya hai ?
-  Module ka matlab hota hai JavaScript code ko alag-alag files me divide karna, taaki code clean, reusable aur maintainable rahe.
 
 # Tree Shaking?
   Tree Shaking ek optimization technique hai jo unused code ko final bundle se hata deti hai.
