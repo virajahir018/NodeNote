@@ -1,6 +1,7 @@
 # Thread and Call stack?
 
 THREAD : 
+
 Thread का मतलब है कोड को Execute (चलाने) का रास्ता।
 
 सरल भाषा में:
