@@ -9,6 +9,12 @@
 - यानि
 - const express = require("express")
 - Express library को import करके express नाम के variable में रख दो।
+
+# App ?
+- const app = express();
+- ये क्या करता है?
+- express() एक application बनाता है।
+- अब सारी API इसी app पर बनेंगी।
 # Thread and Call stack?
 
 THREAD : 
