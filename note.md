@@ -1,3 +1,14 @@
+# Express Install ?
+
+- Node.js सिर्फ JavaScript चलाता है।
+- Express हमें API बनाने में मदद करता है।
+
+# Express Import :
+- const express = require("express");
+- require() किसी package को अपने project में लाता है।
+- यानि
+- const express = require("express")
+- Express library को import करके express नाम के variable में रख दो।
 # Thread and Call stack?
 
 THREAD : 
@@ -75,3 +86,13 @@ Node.js में API के फायदेतेज परफॉर्मे�
 * भरोसेमंद कनेक्शन: डेटा भेजने से पहले यह दोनों कंप्यूटरों के बीच संबंध बनाता है (जिसे 3-Way Handshake कहते हैं)।
 
 * गारंटी: अगर कोई टुकड़ा रास्ते में खो जाता है, तो TCP उसे दोबारा मंगवाता है। यह सुनिश्चित करता है कि डेटा अधूरा न रहे।
+
+
+# CRUD क्या होता है?
+
+- CRUD का मतलब है:
+
+C → Create (नया डेटा जोड़ना)
+R → Read (डेटा देखना)
+U → Update (डेटा बदलना)
+D → Delete (डेटा हटाना)
