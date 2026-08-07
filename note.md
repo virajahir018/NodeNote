@@ -3,7 +3,7 @@
 - Node.js सिर्फ JavaScript चलाता है।
 - Express हमें API बनाने में मदद करता है।
 
-# Express Import :
+# Express Import ?
 - const express = require("express");
 - require() किसी package को अपने project में लाता है।
 - यानि
@@ -15,6 +15,12 @@
 - ये क्या करता है?
 - express() एक application बनाता है।
 - अब सारी API इसी app पर बनेंगी।
+
+# app.use() ?
+- Express.js का middleware register करने के लिए इस्तेमाल होता है।
+- सरल भाषा में:
+- जो भी request आए, उसे पहले यह function handle करे, फिर आगे भेजे।
+
 # Thread and Call stack?
 
 THREAD : 
