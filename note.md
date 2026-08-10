@@ -10,6 +10,9 @@
 - const express = require("express")
 - Express library को import करके express नाम के variable में रख दो।
 
+# express.json() ?
+- to express.json() us JSON ko JavaScript ke req.body me convert karta hai.
+
 # App ?
 - const app = express();
 - ये क्या करता है?
@@ -21,8 +24,20 @@
 - सरल भाषा में:
 - जो भी request आए, उसे पहले यह function handle करे, फिर आगे भेजे।
 
+# fs ? 
+- ka matlab File System.
+- Isse hum file:
+- read
+- write
+- update
+- delete
+- kar sakte hain.
+
 # app.listen() ?
 - Server चालू करता है।
+
+# req.body क्या है ?
+- Client जो JSON भेजता है, वह req.body में आता है।
 
 # Thread and Call stack ?
 
