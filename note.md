@@ -26,18 +26,38 @@
 
 # fs ? 
 - ka matlab File System.
-- Isse hum file:
+- Isse hum file :
 - read
 - write
 - update
 - delete
 - kar sakte hain.
 
+# fs.readFileSync() ?
+- Ye users.json file ko read karta hai.
+
 # app.listen() ?
 - Server चालू करता है।
 
 # req.body क्या है ?
 - Client जो JSON भेजता है, वह req.body में आता है।
+
+# Middleware क्या है ?
+
+- Middleware एक ऐसा function है जो Request और Response के बीच में चलता है।
+- मतलब जब user API को request भेजता है, तो request सीधे route पर नहीं जाती। बीच में Middleware कुछ काम कर सकता है।
+
+सबसे Important चीज़: next () :
+- "अब अगला middleware या route चलाओ.
+- अगर तुम next() नहीं लगाओगे तो request यहीं रुक जाएगी।
+
+# Schema क्या होता है ?
+- Schema बताता है कि हमारे database में data किस structure और किस type का होगा।
+- age: Number
+- Schema हमें data का expected structure define करने देता है।
+
+
+===============================================================
 
 # Thread and Call stack ?
 
