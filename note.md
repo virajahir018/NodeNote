@@ -13,11 +13,29 @@
 # express.json() ?
 - to express.json() us JSON ko JavaScript ke req.body me convert karta hai.
 
+# express.Router()
+- Express ka ek function hai jo routes ka group banane ke liye use hota hai.
+
+- Website/API par kis URL par kya kaam hoga.
+  
+- Example:
+
+- GET  /products
+- POST /products
+- GET  /products/1
+- DELETE /products/1
+
 # App ?
 - const app = express();
 - ये क्या करता है?
 - express() एक application बनाता है।
 - अब सारी API इसी app पर बनेंगी।
+
+- Ab app ke through hum :
+
+- routes bana sakte hain
+- middleware laga sakte hain
+- server start kar sakte hain
 
 # app.use() ?
 - Express.js का middleware register करने के लिए इस्तेमाल होता है।
@@ -51,12 +69,43 @@
 - "अब अगला middleware या route चलाओ.
 - अगर तुम next() नहीं लगाओगे तो request यहीं रुक जाएगी।
 
+# Mongoose ?
+- Mongoose Node.js ke andar MongoDB ke saath kaam karne ke liye ek library (ODM) hai.
+- MongoDB = database
+- Mongoose = Node.js aur MongoDB ke beech ka bridge/helper
+
+# Mongoose ki zarurat kyu padti hai?
+- Agar tum directly MongoDB se kaam karo, to tumhe database ke documents ke saath manually kaafi cheezein handle karni padti hain.
+- Mongoose tumhe Schema, Model, Validation, Query methods jaise features deta hai.
+- 
 # Schema क्या होता है ?
 - Schema बताता है कि हमारे database में data किस structure और किस type का होगा।
 - age: Number
 - Schema हमें data का expected structure define करने देता है।
 
+# Model क्या है ?
+- Schema सिर्फ structure/rules define करता है।
+- लेकिन हमें MongoDB के साथ actual काम भी करना है।
 
+- जैसे:
+
+- Create User
+- Find User
+- Update User
+- Delete User
+
+- इन कामों के लिए हम Model बनाते हैं।
+
+# populate() ?
+- Mongoose ka method hai jo ObjectId ke through related document ka actual data nikalta hai.
+
+# bcrypt ?
+- bcrypt password ko secure banane ke liye use hota hai. Ye password ko hash karta hai, taaki database me original password store na ho.
+
+# JWT (JSON Web Token) ?
+- ka use login ke baad user ko identify aur authenticate karne ke liye hota hai.
+- Socho tum website par login karte ho:
+- Ab jab tum profile open karoge, frontend token backend ko bhejega. Backend token verify karke samjhega ki request kis user ki hai.
 ===============================================================
 
 # Thread and Call stack ?
