@@ -106,6 +106,11 @@
 - ka use login ke baad user ko identify aur authenticate karne ke liye hota hai.
 - Socho tum website par login karte ho:
 - Ab jab tum profile open karoge, frontend token backend ko bhejega. Backend token verify karke samjhega ki request kis user ki hai.
+
+# process ? 
+- ek built-in global object hai. Isse hum running Node.js program aur uske environment ki information access karte hain.
+- 1. process.env
+- Environment variables access karne ke liye:
 ===============================================================
 
 # Thread and Call stack ?
