@@ -245,7 +245,7 @@ CJS और ESM जावास्क्रिप्ट में कोड क�
 - DELETE: सर्वर से किसी डेटा को हटाने के लिए. (उदा. पोस्ट डिलीट करना)
 
   # GET request :
-    <!-- - app.get(path, (req, res) => {
+      <!-- - app.get(path, (req, res) => {
            // Code
          });
        - path → कौन-सा URL handle करना है।
