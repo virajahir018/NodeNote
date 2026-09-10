@@ -11,10 +11,11 @@
 - Express library को import करके express नाम के variable में रख दो।
 
 # express.json() ?
-- to express.json() us JSON ko JavaScript ke req.body me convert karta hai.
+- JSON data ko JavaScript object me convert karta hai, 
+- taaki hum req.body se data access kar saken.
 
 # express.Router()
-- Express ka ek function hai jo routes ka group banane ke liye use hota hai.
+- routes ka group, aur us group me GET, POST, PUT, DELETE sab use kar sakte ho.
 
 - Website/API par kis URL par kya kaam hoga.
   
@@ -22,7 +23,7 @@
 
 - GET  /products
 - POST /products
-- GET  /products/1
+- PUT /products/1
 - DELETE /products/1
 
 # App ?
@@ -107,44 +108,102 @@
 - Socho tum website par login karte ho:
 - Ab jab tum profile open karoge, frontend token backend ko bhejega. Backend token verify karke samjhega ki request kis user ki hai.
 
-# process ? 
+# Process ? 
 - ek built-in global object hai. Isse hum running Node.js program aur uske environment ki information access karte hain.
 1. process.env
-- Environment variables access karne ke liye:
+- Environment variables access karne ke liye :
+
+2. process.exit()
+- Program ko stop karne ke liye:
+
+3. process.cwd()
+- Current working directory dekhne ke liye:
+
+4. process.argv
+- Command-line arguments dekhne ke liye:
+
+# Configuration ?
+- yani project ki important settings ko ek jagah rakhna.
+- Application ko chalane ke liye required settings ko define aur manage karna
+
+# .env (environment) ?
+- jisme hum secret keys aur important settings store karte hain. 
+- Inhe dotenv package aur process.env se access karte hain.
+
 ===============================================================
 
 # Thread and Call stack ?
 
-THREAD :
+# THREAD :
 
-Thread का मतलब है कोड को Execute (चलाने) का रास्ता।
+- Thread का मतलब है कोड को Execute (चलाने) का रास्ता।
 
 सरल भाषा में:
 
-Thread = वह worker जो आपके instructions एक-एक करके execute करता है।
+- Thread = वह worker जो आपके instructions एक-एक करके execute करता है।
+- JavaScript Single Threaded है
+- JavaScript में केवल एक Main Thread होता है।
+- इसका काम कोड की लाइनों को पढ़ना, कैलकुलेशन करना और वेरिएबल स्टोर करना है। यह पूरी मेहनत (CPU processing) करता है।
 
-JavaScript Single Threaded है
+Call Stack
+     ↓
+Node.js APIs
+     ↓
+libuv
+     ↓
+Queues
+     ↓
+Event Loop
+     ↓
+Call Stack
 
-JavaScript में केवल एक Main Thread होता है।
+# CALL STACK : 
 
-इसका काम कोड की लाइनों को पढ़ना, कैलकुलेशन करना और वेरिएबल स्टोर करना है। यह पूरी मेहनत (CPU processing) करता है।
+- यह एक डेटा स्ट्रक्चर (मेमरी लोकेशन) है जो यह ट्रैक करता है कि इस समय थ्रेड के अंदर कौन से फंक्शन्स चल रहे हैं और किस फंक्शन के बाद कौन सा फंक्शन शुरू हुआ था।
+- इसका काम केवल मैनेजमेंट है। यह फंक्शन्स को LIFO (Last In, First Out) ऑर्डर में अरेंज करता है ताकि थ्रेड को पता रहे कि एक फंक्शन खत्म होने के बाद वापस कहाँ लौटना है।
+- Jab asynchronous operation aata hai.
+- toh Node.js us operation ko directly Call Stack par wait nahi karwata.
+- Node.js us operation ko apne asynchronous system ko de deta hai.
 
-CALL STACK : 
-यह एक डेटा स्ट्रक्चर (मेमरी लोकेशन) है जो यह ट्रैक करता है कि इस समय थ्रेड के अंदर कौन से फंक्शन्स चल रहे हैं और किस फंक्शन के बाद कौन सा फंक्शन शुरू हुआ था।
+# libuv :
 
-इसका काम केवल मैनेजमेंट है। यह फंक्शन्स को LIFO (Last In, First Out) ऑर्डर में अरेंज करता है ताकि थ्रेड को पता रहे कि एक फंक्शन खत्म होने के बाद वापस कहाँ लौटना है।
+- Node.js ke asynchronous operations ko handle karne ke liye libuv important library hai.
+
+- timers handle karta hai
+- file system operations handle karwata hai
+- network operations handle karta hai
+- thread pool provide karta hai kuch blocking operations ke liye
+  
+- Isliye simple way me:
+- Asynchronous operations ko Node.js ke andar libuv manage karta hai.
 
 # कॉलबैक क्यू (Callback Queue)?
-Node.js का एक मुख्य हिस्सा है, जहाँ वे सभी एसिंक्रोनस कार्य (Asynchronous tasks) इंतज़ार करते हैं जिनका बैकग्राउंड प्रोसेस पूरा हो चुका है और अब उन्हें वापस कॉल स्टैक (Call Stack) में जाकर रन (Run) होना है।इसे टास्क क्यू (Task Queue) भी कहा जाता है। यह FIFO (First In, First Out) के नियम पर काम करता है, यानी जो काम पहले तैयार होगा, वह पहले कॉल स्टैक में जाएगा।यह कैसे काम करता है? (Step-by-Step)बैकग्राउंड प्रोसेस: जब Node.js कोई एसिंक्रोनस काम (जैसे setTimeout या फ़ाइल पढ़ना) शुरू करता है, तो उसे बैकग्राउंड (Web APIs / Thread Pool) में भेज देता है ताकि कॉल स्टैक खाली रहे।क्यू में आना: जैसे ही बैकग्राउंड में वह काम (जैसे टाइमर पूरा होना) खत्म होता है, उसका कॉलबैक फ़ंक्शन कॉलबैक क्यू में आकर लाइन में लग जाता है।कॉल स्टैक में जाना: इवेंट लूप (Event Loop) लगातार यह देखता रहता है कि क्या कॉल स्टैक खाली है? जैसे ही कॉल स्टैक पूरी तरह खाली होता है, इवेंट लूप कॉलबैक क्यू से पहले फ़ंक्शन को उठाकर कॉल स्टैक में भेज देता है।
+
+- Node.js का एक मुख्य हिस्सा है, जहाँ वे सभी एसिंक्रोनस कार्य (Asynchronous tasks) इंतज़ार करते हैं जिनका बैकग्राउंड प्रोसेस पूरा हो चुका है 
+- और अब उन्हें वापस कॉल स्टैक (Call Stack) में जाकर रन (Run) होना है।इसे टास्क क्यू (Task Queue) भी कहा जाता है। 
+- यह FIFO (First In, First Out) के नियम पर काम करता है, यानी जो काम पहले तैयार होगा, वह पहले कॉल स्टैक में जाएगा।
+- यह कैसे काम करता है? (Step-by-Step)बैकग्राउंड प्रोसेस: 
+- जब Node.js कोई एसिंक्रोनस काम (जैसे setTimeout या फ़ाइल पढ़ना) शुरू करता है, 
+- तो उसे बैकग्राउंड (Web APIs / Thread Pool) में भेज देता है ताकि कॉल स्टैक खाली रहे।
+- क्यू में आना: जैसे ही बैकग्राउंड में वह काम (जैसे टाइमर पूरा होना) खत्म होता है, 
+- उसका कॉलबैक फ़ंक्शन Callback Queue में आकर लाइन में लग जाता है।
+- CALL STACK में जाना: इवेंट लूप.
+- 
+# Event Loop :
+
+- लगातार यह देखता रहता है कि क्या कॉल स्टैक खाली है? 
+- जैसे ही कॉल स्टैक पूरी तरह खाली होता है, 
+- इवेंट लूप कॉलबैक क्यू से पहले फ़ंक्शन को उठाकर कॉल स्टैक में भेज देता है।
 
 # Module kya hai ?
   Module ka matlab hota hai JavaScript code ko alag-alag files me divide karna, taaki code clean, reusable aur maintainable rahe.
 
-# CJS AND ESM :
-  CJS और ESM जावास्क्रिप्ट में कोड को व्यवस्थित और शेयर (import/export) करने के दो अलग-अलग तरीके (मॉड्यूल सिस्टम) हैं।
+# CJS and ESM :
+  - CJS और ESM जावास्क्रिप्ट में कोड को व्यवस्थित और शेयर (import/export) करने के दो अलग-अलग तरीके (मॉड्यूल सिस्टम) हैं।
 
   # CJS (CommonJS) क्या है?
-  यह Node.js का पुराना और पारंपरिक मॉड्यूल सिस्टम है।इसमें कोड को लोड करने के लिए require() और बाहर भेजने के लिए module.exports का इस्तेमाल होता है।यह सिंक्रोनस (Synchronous)तरीके से काम करता है, यानी फाइलें एक-एक करके लाइन से लोड होती हैं। यह सर्वर-साइड (Backend) के लिए ठीक है, लेकिन ब्राउज़र के लिए धीमा हो सकता है।
+  यह Node.js का पुराना और पारंपरिक मॉड्यूल सिस्टम है।
+  इसमें कोड को लोड करने के लिए require() और बाहर भेजने के लिए module.exports का इस्तेमाल होता है।यह सिंक्रोनस (Synchronous)तरीके से काम करता है, यानी फाइलें एक-एक करके लाइन से लोड होती हैं। यह सर्वर-साइड (Backend) के लिए ठीक है, लेकिन ब्राउज़र के लिए धीमा हो सकता है।
 
   # ESM (ECMAScript Modules) क्या है?
   यह जावास्क्रिप्ट का नया और आधिकारिक (Official) मानक तरीका है।इसमें कोड को जोड़ने के लिए import और बाहर भेजने के लिए export कीवर्ड का उपयोग होता है।यह एसिंक्रोनस(Asynchronous) तरीके से काम करता है, जिससे ब्राउज़र और आधुनिक रनटाइम में फाइलें तेजी से लोड होती हैं। इसमें 'ट्री-शेकेबिलिटी' (Tree-shaking) की सुविधा भी मिलती है, यानी जोकोड काम का नहीं है वह हट जाता है।
