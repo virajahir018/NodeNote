@@ -196,50 +196,61 @@
 - इवेंट लूप कॉलबैक क्यू से पहले फ़ंक्शन को उठाकर कॉल स्टैक में भेज देता है।
 
 # Module kya hai ?
+
   Module ka matlab hota hai JavaScript code ko alag-alag files me divide karna, taaki code clean, reusable aur maintainable rahe.
 
 # CJS and ESM :
-  - CJS और ESM जावास्क्रिप्ट में कोड को व्यवस्थित और शेयर (import/export) करने के दो अलग-अलग तरीके (मॉड्यूल सिस्टम) हैं।
 
-  # CJS (CommonJS) क्या है?
-  यह Node.js का पुराना और पारंपरिक मॉड्यूल सिस्टम है।
-  इसमें कोड को लोड करने के लिए require() और बाहर भेजने के लिए module.exports का इस्तेमाल होता है।यह सिंक्रोनस (Synchronous)तरीके से काम करता है, यानी फाइलें एक-एक करके लाइन से लोड होती हैं। यह सर्वर-साइड (Backend) के लिए ठीक है, लेकिन ब्राउज़र के लिए धीमा हो सकता है।
+CJS और ESM जावास्क्रिप्ट में कोड को व्यवस्थित और शेयर (import/export) करने के दो अलग-अलग तरीके (मॉड्यूल सिस्टम) हैं।
 
-  # ESM (ECMAScript Modules) क्या है?
-  यह जावास्क्रिप्ट का नया और आधिकारिक (Official) मानक तरीका है।इसमें कोड को जोड़ने के लिए import और बाहर भेजने के लिए export कीवर्ड का उपयोग होता है।यह एसिंक्रोनस(Asynchronous) तरीके से काम करता है, जिससे ब्राउज़र और आधुनिक रनटाइम में फाइलें तेजी से लोड होती हैं। इसमें 'ट्री-शेकेबिलिटी' (Tree-shaking) की सुविधा भी मिलती है, यानी जोकोड काम का नहीं है वह हट जाता है।
+# CJS (CommonJS) ?
+
+- यह Node.js का पुराना और पारंपरिक मॉड्यूल सिस्टम है।
+- इसमें कोड को लोड करने के लिए require() और बाहर भेजने के लिए module.exports का इस्तेमाल होता है।
+- यह सिंक्रोनस (Synchronous)तरीके से काम करता है, यानी फाइलें एक-एक करके लाइन से लोड होती हैं। 
+- यह सर्वर-साइड (Backend) के लिए ठीक है, लेकिन ब्राउज़र के लिए धीमा हो सकता है।
+- 
+# ESM (ECMAScript Modules) क्या है?
+
+- यह जावास्क्रिप्ट का नया और आधिकारिक (Official) मानक तरीका है।
+- इसमें कोड को जोड़ने के लिए import और बाहर भेजने के लिए export कीवर्ड का उपयोग होता है।
+- यह एसिंक्रोनस(Asynchronous)तरीके से काम करता है, 
+- जिससे ब्राउज़र और आधुनिक रनटाइम में फाइलें तेजी से लोड होती हैं। 
+- इसमें 'ट्री-शेकेबिलिटी' (Tree-shaking) की सुविधा भी मिलती है, 
+- यानी जो कोड काम का नहींहै वह हट जाता है।
 
 
 # Tree Shaking?
-  Tree Shaking ek optimization technique hai jo unused code ko final bundle se hata deti hai.
 
-  Unused code ko remove karke sirf zaroori code ko final bundle me rakhna.
+- Tree Shaking ek optimization technique hai jo unused code ko final bundle se hata deti hai.
+- Unused code ko remove karke sirf zaroori code ko final bundle me rakhna.
 
-  # Tree Shaking ka fayda :
-  Bundle size chhota hota hai.
-  Website jaldi load hoti hai.
-  Kam data download hota hai.
-  Better performance milti hai.
+# Tree Shaking ka fayda :
+- Bundle size chhota hota hai.
+- Website jaldi load hoti hai.
+- Kam data download hota hai.
+- Better performance milti hai.
 
 # API (Application Programming Interface) : 
-* एक ऐसा माध्यम है जो दो अलग-अलग एप्लिकेशन्स या सॉफ्टवेयर (जैसे आपका मोबाइल ऐप/वेबसाइट और डेटाबेस) को आपस में सुरक्षित तरीके से डेटा शेयर और बातचीत (Communication) करने की     अनुमति देता है.
+- एक ऐसा माध्यम है जो दो अलग-अलग एप्लिकेशन्स या सॉफ्टवेयर (जैसे आपका मोबाइल ऐप/वेबसाइट और डेटाबेस) 
+- को आपस में सुरक्षित तरीके से डेटा शेयर और बातचीत (Communication) करने की अनुमति देता है.
 
-API कैसे काम करती है ?
-* (HTTP Methods)Node.js API मुख्य रूप से चार प्रकार के ऑपरेशन्स (जिसे CRUD कहा जाता है) पर काम करती है:
+# API कैसे काम करती है ?
 
- - GET: सर्वर से डेटा पढ़ने या मंगाने के लिए. (उदा. यूजर प्रोफाइल देखना)
+(HTTP Methods)Node.js API मुख्य रूप से चार प्रकार के ऑपरेशन्स (जिसे CRUD कहा जाता है) पर काम करती है :
 
-* POST: सर्वर पर नया डेटा भेजने या सेव करने के लिए. (उदा. नया अकाउंट बनाना)
-
-* PUT/PATCH: सर्वर पर मौजूद डेटा को अपडेट या बदलने के लिए. (उदा. पासवर्ड बदलना)
-* DELETE: सर्वर से किसी डेटा को हटाने के लिए. (उदा. पोस्ट डिलीट करना)
+- GET: सर्वर से डेटा पढ़ने या मंगाने के लिए. (उदा. यूजर प्रोफाइल देखना)
+- POST: सर्वर पर नया डेटा भेजने या सेव करने के लिए. (उदा. नया अकाउंट बनाना)
+- PUT/PATCH: सर्वर पर मौजूद डेटा को अपडेट या बदलने के लिए. (उदा. पासवर्ड बदलना)
+- DELETE: सर्वर से किसी डेटा को हटाने के लिए. (उदा. पोस्ट डिलीट करना)
 
 GET request :
-- app.get(path, (req, res) => {
+<!-- - app.get(path, (req, res) => {
     // Code
   });
 - path → कौन-सा URL handle करना है।
 - req → Client की request।
-- res → Client को response भेजने के लिए।
+- res → Client को response भेजने के लिए। -->
 
 Node.js में API के फायदेतेज परफॉर्मेंस: 
 - Node.js एसिंक्रोनस (Asynchronous) होता है, जिससे यह एक साथ लाखों रिक्वेस्ट संभाल सकता है.J
