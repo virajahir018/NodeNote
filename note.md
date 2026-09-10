@@ -145,17 +145,17 @@
 - JavaScript में केवल एक Main Thread होता है।
 - इसका काम कोड की लाइनों को पढ़ना, कैलकुलेशन करना और वेरिएबल स्टोर करना है। यह पूरी मेहनत (CPU processing) करता है।
 
-Call Stack
-     ↓
-Node.js APIs
-     ↓
-libuv
-     ↓
-Queues
-     ↓
-Event Loop
-     ↓
-Call Stack
+- Call Stack
+-      ↓
+- Node.js APIs
+-      ↓
+- libuv
+-      ↓
+- Queues
+-      ↓
+- Event Loop
+-      ↓
+- Call Stack
 
 # CALL STACK : 
 
