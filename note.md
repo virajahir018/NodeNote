@@ -245,12 +245,12 @@ CJS और ESM जावास्क्रिप्ट में कोड क�
 - DELETE: सर्वर से किसी डेटा को हटाने के लिए. (उदा. पोस्ट डिलीट करना)
 
 GET request :
-<!-- - app.get(path, (req, res) => {
-    // Code
-  });
-- path → कौन-सा URL handle करना है।
-- req → Client की request।
-- res → Client को response भेजने के लिए। -->
+       <!-- - app.get(path, (req, res) => {
+           // Code
+         });
+       - path → कौन-सा URL handle करना है।
+       - req → Client की request।
+       - res → Client को response भेजने के लिए। -->
 
 Node.js में API के फायदेतेज परफॉर्मेंस: 
 - Node.js एसिंक्रोनस (Asynchronous) होता है, जिससे यह एक साथ लाखों रिक्वेस्ट संभाल सकता है.J
