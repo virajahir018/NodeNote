@@ -130,6 +130,9 @@
 - jisme hum secret keys aur important settings store karte hain. 
 - Inhe dotenv package aur process.env se access karte hain.
 
+# Aggregate ?
+- MongoDB/Mongoose me aggregate() ka use database ke data par multiple operations karke result nikalne ke liye hota hai.
+
 ===============================================================
 
 # Thread and Call stack ?
