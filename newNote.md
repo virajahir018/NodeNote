@@ -1,81 +1,682 @@
-AI Mode
-All
-Images
-Videos
-News
-Maps
-Shopping
-Books
-Flights
-Finance
-Node.js का उपयोग मुख्य रूप से सर्वर-साइड (Backend) वेब डेवलपमेंट के लिए किया जाता है. यह कोई प्रोग्रामिंग लैंग्वेज नहीं है, बल्कि एक JavaScript Runtime Environment है जो जावास्क्रिप्ट कोड को ब्राउज़र से बाहर (आपके कंप्यूटर या सर्वर पर) चलाने की अनुमति देता है. 
+# Node.js Notes
 
-Boldare
- +3
-हम Node.js का उपयोग क्यों करते हैं, इसके मुख्य कारण नीचे दिए गए हैं:
-1. Frontend और Backend के लिए एक ही भाषा (JavaScript)
-पहले डेवलपर्स को फ्रंटएंड के लिए जावास्क्रिप्ट और बैकएंड के लिए PHP, Python या Java जैसी अलग भाषाएं सीखनी पड़ती थीं। Node.js की मदद से आप फ्रंटएंड और बैकएंड दोनों जगह सिर्फ JavaScript का उपयोग कर सकते हैं. इसे Full Stack Development कहा जाता है. 
+## 1. Node.js kya hai?
 
-YouTube
- +2
-2. बेहतरीन परफॉर्मेंस (Fast Execution)
-Node.js Google Chrome के V8 JavaScript Engine पर बना है. यह इंजन जावास्क्रिप्ट कोड को बहुत तेजी से सीधे मशीन कोड (Machine Code) में बदल देता है, जिससे ऐप्स की स्पीड बहुत फास्ट हो जाती है. 
+**Node.js** ka use mainly **server-side (Backend) web development** ke liye kiya jata hai.
 
-YouTube
- +1
-3. Non-blocking I/O और Asynchronous Model
-Node.js एक Single-threaded Event Loop पर काम करता है। इसका मतलब है कि यह एक समय में बिना रुके (Non-blocking) हजारों रिक्वेस्ट को एक साथ संभाल सकता है। अगर कोई यूजर डेटाबेस से बड़ी फाइल डाउनलोड कर रहा है, तो सर्वर दूसरे यूजर्स को ब्लॉक नहीं करेगा, बल्कि उनके काम भी बैकग्राउंड में चलते रहेंगे। 
+Node.js koi programming language nahi hai. Ye ek **JavaScript Runtime Environment** hai jo JavaScript code ko browser ke bahar, yani **computer ya server** par run karne ki permission deta hai.
 
-YouTube
- +1
-4. Real-time Applications के लिए बेस्ट
-Node.js डेटा स्ट्रीमिंग और रियल-टाइम ऐप्स के लिए सबसे बेहतरीन माना जाता है。 इसका उपयोग निम्नलिखित चीज़ों को बनाने में बहुत होता है: 
+### Simple Definition
 
-YouTube
-·Code Step By Step
-Chat Applications (जैसे WhatsApp, Discord)
-Live Streaming Apps (जैसे YouTube, Netflix)
-Online Gaming और Collaborative Tools (जैसे Trello, Google Docs) 
+> **Node.js is a JavaScript Runtime Environment that allows us to run JavaScript outside the browser.**
 
-YouTube
-·Code Step By Step
-5. डेटाबेस और फाइल सिस्टम से कनेक्शन
-साधारण जावास्क्रिप्ट ब्राउज़र के अंदर चलती है, इसलिए वह आपके कंप्यूटर की फाइल्स को डिलीट या क्रिएट नहीं कर सकती और न ही सीधे डेटाबेस से जुड़ सकती है। लेकिन Node.js की मदद से आप फाइल सिस्टम (Read/Write) को एक्सेस कर सकते हैं और MongoDB या MySQL जैसे डेटाबेस से आसानी से कनेक्ट कर सकते हैं। 
+---
 
-YouTube
- +2
-6. विशाल NPM इकोसिस्टम (Huge Package Ecosystem)
-Node.js के पास NPM (Node Package Manager) है, जो दुनिया का सबसे बड़ा ओपन-सोर्स लाइब्रेरी इकोसिस्टम है। यहाँ आपको अपनी ऐप में कोई भी फीचर जोड़ने के लिए (जैसे लॉगिन सिस्टम, इमेज अपलोड) पहले से बने-बनाए कोड या पैकेजेस मिल जाते हैं, जिससे कोडिंग का समय बचता है। 
-अगर आप Node.js की कार्यप्रणाली और इसके उपयोग को वीडियो के माध्यम से लाइव कोडिंग के साथ समझना चाहते हैं, तो आप इस ट्यूटोरियल को देख सकते हैं:
+## 2. Node.js ka use kyu karte hain?
 
-12:16
-Node JS in Hindi #1 what is Node | Introduction
-5.5L views · 5 years ago
+### 2.1 Frontend aur Backend ke liye ek hi language
 
-YouTube · Code Step By Step
-क्या आप Node.js के साथ Express.js या API डेवलपमेंट के बारे में जानना चाहते हैं, या इसे अपने कंप्यूटर में इंस्टॉल और सेटअप करने का तरीका सीखना चाहते हैं? मुझे बताएं ताकि मैं आगे आपकी मदद कर सकूं। 
+Node.js ki help se hum **Frontend aur Backend dono mein JavaScript** use kar sakte hain.
 
-YouTube
+Pehle developers ko:
 
+* Frontend → JavaScript
+* Backend → PHP / Python / Java
 
+jaise different languages use karni padti thi.
 
+Node.js ke saath:
 
-AI Mode response is ready
+```text
+Frontend  → JavaScript
+Backend   → JavaScript
+```
 
-npm का पूरा नाम Node Package Manager है। यह दुनिया का सबसे बड़ा सॉफ्टवेयर रजिस्ट्री (डेटाबेस) है और Node.js का डिफॉल्ट पैकेज मैनेजर है। जब आप अपने कंप्यूटर में Node.js इंस्टॉल करते हैं, तो npm अपने आप उसके साथ इंस्टॉल हो जाता है।आसान शब्दों में कहें तो, npm के दो मुख्य भाग होते हैं:एक ऑनलाइन लाइब्रेरी (Registry): जहाँ दुनिया भर के डेवलपर्स ने जावास्क्रिप्ट के 20 लाख से ज्यादा बने-बनाए कोड (जिन्हें packages या modules कहते हैं) अपलोड कर रखे हैं।एक कमांड लाइन टूल (CLI): जिसकी मदद से आप अपने कंप्यूटर के टर्मिनल (Terminal) या कमांड प्रॉम्प्ट (CMD) में साधारण कमांड्स लिखकर उन पैकेजेस को अपने प्रोजेक्ट में डाउनलोड और इस्तेमाल कर सकते हैं।हम npm का उपयोग क्यों करते हैं?मान लीजिए आप एक वेबसाइट बना रहे हैं और आपको उसमें यूजर लॉगिन सिस्टम, इमेज अपलोड करने का फीचर, या तारीखों (Dates) को फॉर्मेट करना है। अगर आप यह सब कोड बिल्कुल शुरुआत (scratch) से लिखेंगे, तो बहुत समय लगेगा।npm की मदद से आप किसी और डेवलपर द्वारा लिखे गए सुरक्षित और टेस्टेड कोड (Package) को सिर्फ एक कमांड से अपने प्रोजेक्ट में जोड़ सकते हैं। इससे आपका काम बहुत आसान और तेज हो जाता है।प्रोजेक्ट में npm की मुख्य चीजें और फाइलें:नामयह क्या करता है?npm initइस कमांड को चलाने से आपके प्रोजेक्ट की शुरुआत होती है और एक package.json फाइल बनती है।package.jsonयह आपके प्रोजेक्ट की कुंडली या मैनिफेस्ट फाइल है। इसमें आपके प्रोजेक्ट का नाम, वर्जन और आपके द्वारा इस्तेमाल किए जा रहे सभी पैकेजेस की लिस्ट होती है।npm install <package-name>इस कमांड से आप इंटरनेट से कोई भी नया पैकेज (जैसे express या mongoose) अपने प्रोजेक्ट में डाउनलोड करते हैं।node_modules/यह एक फोल्डर होता है, जहाँ आपके प्रोजेक्ट के लिए डाउनलोड किए गए सभी पैकेजेस का कोड आकर सेव होता है।package-lock.jsonयह फाइल अपने आप बनती है और ट्रैक रखती है कि कौन से पैकेज का कौन सा सटीक वर्जन इंस्टॉल हुआ है, ताकि दूसरे कंप्यूटर पर भी प्रोजेक्ट बिल्कुल वैसे ही चले।कुछ प्रसिद्ध npm पैकेजेस के उदाहरण:Express: बैकएंड सर्वर और API बनाने के लिए सबसे ज्यादा इस्तेमाल होने वाला फ्रेमवर्क।Nodemon: जब भी आप कोड में कोई बदलाव करके सेव करते हैं, यह आपके सर्वर को अपने आप रीस्टार्ट कर देता है।Mongoose: MongoDB डेटाबेस से आसानी से कनेक्ट करने और डेटा मैनेज करने के लिए।अब आगे आप क्या सीखना चाहेंगे?प्रोजेक्ट में npm पैकेज को इंस्टॉल और इस्तेमाल करने का लाइव कोड उदाहरण देखें?या रोज इस्तेमाल होने वाले सबसे जरूरी npm कमांड्स (Commands) की लिस्ट देखें?
+Is approach ko **Full Stack JavaScript Development** kaha ja sakta hai.
 
-Node.js में Module (मॉड्यूल) का मतलब एक साधारण जावास्क्रिप्ट फाइल होता है, जिसमें लिखा गया कोड किसी खास काम को करने के लिए बनाया जाता है।आसान शब्दों में कहें तो, अगर आप अपने प्रोजेक्ट का सारा कोड (जैसे लॉगिन, डेटाबेस कनेक्शन, और कैलकुलेशन) एक ही बड़ी फाइल (index.js) में लिख देंगे, तो कोड को समझना और संभालना बहुत मुश्किल हो जाएगा। इससे बचने के लिए, हम अलग-अलग कामों के लिए छोटी-छोटी फाइलें बना लेते हैं, जिन्हें Modules कहा जाता है। इन मॉड्यूल्स को आप अपने प्रोजेक्ट में कहीं भी Import (शामिल) करके इस्तेमाल कर सकते हैं।Node.js में मॉड्यूल्स के प्रकार (Types of Modules)Node.js में मुख्य रूप से 3 प्रकार के मॉड्यूल्स होते हैं:Core Modules (इन-बिल्ट मॉड्यूल्स): ये Node.js के साथ पहले से ही आते हैं, इन्हें अलग से डाउनलोड करने की जरूरत नहीं होती।उदाहरण: fs (फाइल हैंडलिंग के लिए), http (सर्वर बनाने के लिए), path (फाइल पाथ के लिए)।Local Modules (कस्टम मॉड्यूल्स): ये वो मॉड्यूल्स या जावास्क्रिप्ट फाइलें हैं जिन्हें आप खुद अपने प्रोजेक्ट की जरूरतों के अनुसार बनाते हैं।Third-Party Modules (थर्ड-पार्टी मॉड्यूल्स): ये वो मॉड्यूल्स हैं जिन्हें दूसरे डेवलपर्स ने बनाया है और आप इन्हें npm की मदद से इंटरनेट से डाउनलोड करते हैं।उदाहरण: express, mongoose आदि।
+---
 
-Node.js (विशेषकर Express.js) में params का मतलब "Parameters" (पैरामीटर्स) होता है। इसका उपयोग URL (वेबसाइट के एड्रेस) से डायनेमिक यानी बदलने वाले डेटा को निकालने (extract करने) के लिए किया जाता है।जब आप कोई ऐसी वेबसाइट या API बनाते हैं जहाँ URL का एक हिस्सा हर बार बदल सकता है (जैसे किसी यूजर की ID या प्रोडक्ट का नाम), तब हम URL में Route Parameters का उपयोग करते हैं, और कोड में इसे req.params लिखकर पढ़ा जाता है।इसे एक आसान उदाहरण से समझें:मान लीजिए आपकी एक ई-कॉमर्स वेबसाइट है और आप हर एक प्रोडक्ट के लिए अलग पेज दिखाना चाहते हैं:://mywebsite.com (यहाँ प्रोडक्ट ID 101 है)://mywebsite.com (यहाँ प्रोडक्ट ID 102 है)इन हज़ारों प्रोडक्ट्स के लिए आप अलग-अलग हज़ारों रूट (Routes) नहीं बनाएंगे। आप सिर्फ एक डायनेमिक रूट बनाएंगे और params का इस्तेमाल करेंगे।Express.js में कोड का उदाहरण:डायनेमिक पैरामीटर बनाने के लिए URL में कोलन (:) का उपयोग किया जाता है:javascriptconst express = require('express');
+### 2.2 Fast Performance
+
+Node.js **Google Chrome ke V8 JavaScript Engine** par based hai.
+
+V8 JavaScript code ko efficiently execute karta hai, jiski wajah se Node.js applications fast perform kar sakti hain.
+
+```text
+JavaScript Code
+       ↓
+    V8 Engine
+       ↓
+   Execution
+```
+
+---
+
+### 2.3 Non-Blocking I/O aur Asynchronous Model
+
+Node.js **event-driven** aur **non-blocking I/O model** use karta hai.
+
+Agar koi operation time leta hai, jaise:
+
+* File read karna
+* Database se data lana
+* Network request
+* API call
+
+to Node.js us operation ke complete hone ka wait karke pura server block nahi karta.
+
+Example:
+
+```text
+Request 1 → Database operation → Background
+Request 2 → Process
+Request 3 → Process
+Request 4 → Process
+```
+
+Is wajah se Node.js I/O-heavy applications ke liye useful hai.
+
+> **Note:** "Node.js single-threaded hai" ka matlab ye nahi hai ki Node.js mein sirf ek hi thread hota hai. JavaScript execution mainly main thread par hota hai, jabki kuch asynchronous operations libuv ke thread pool ya OS facilities ka use kar sakte hain.
+
+---
+
+## 3. Node.js ka use kaha hota hai?
+
+Node.js ka use kai types ke applications banane mein hota hai:
+
+* REST APIs
+* Backend Servers
+* Real-time Applications
+* Chat Applications
+* Streaming Applications
+* Online Games
+* Collaborative Applications
+* Microservices
+
+### Example
+
+```text
+Client
+  ↓
+Node.js Server
+  ↓
+Database
+  ↓
+Response
+```
+
+---
+
+# npm — Node Package Manager
+
+## 4. npm kya hai?
+
+**npm** ka commonly used full form **Node Package Manager** hai.
+
+npm Node.js ecosystem ka **package manager aur package registry** hai.
+
+Node.js install karne par normally npm bhi install ho jata hai.
+
+Simple words mein:
+
+> **npm ki help se hum apne project mein external packages install, manage aur use kar sakte hain.**
+
+---
+
+## 5. npm ke do important parts
+
+### 5.1 npm Registry
+
+npm Registry ek online repository hai jahan developers packages publish karte hain.
+
+Example packages:
+
+* Express
+* Mongoose
+* Nodemon
+* Axios
+
+---
+
+### 5.2 npm CLI
+
+npm CLI ki help se hum terminal ya CMD se packages ko manage karte hain.
+
+Example:
+
+```bash
+npm install express
+```
+
+---
+
+# 6. npm ka use kyu karte hain?
+
+Suppose hume apne application mein authentication system banana hai.
+
+Agar hum sab kuch scratch se banayenge, to kaafi time lag sakta hai.
+
+npm ki help se hum existing packages install kar sakte hain.
+
+Example:
+
+```bash
+npm install express
+```
+
+Isse Express package project mein add ho jayega.
+
+---
+
+# 7. Important npm Files & Commands
+
+| Command / File          | Purpose                                            |
+| ----------------------- | -------------------------------------------------- |
+| `npm init`              | New Node.js project initialize karta hai           |
+| `npm install <package>` | Package install karta hai                          |
+| `package.json`          | Project aur dependencies ki information rakhta hai |
+| `package-lock.json`     | Installed dependency versions ko lock karta hai    |
+| `node_modules`          | Installed packages ka code store karta hai         |
+
+---
+
+## 7.1 `npm init`
+
+Project initialize karne ke liye:
+
+```bash
+npm init
+```
+
+Ye `package.json` file create karta hai.
+
+Quick setup ke liye:
+
+```bash
+npm init -y
+```
+
+---
+
+## 7.2 `package.json`
+
+`package.json` ko aap project ki **configuration / manifest file** samajh sakte ho.
+
+Example:
+
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^5.0.0"
+  }
+}
+```
+
+Isme project ke baare mein information aur dependencies hoti hain.
+
+---
+
+## 7.3 `npm install`
+
+Package install karne ke liye:
+
+```bash
+npm install express
+```
+
+Iske baad package project ki dependencies mein add ho jata hai.
+
+---
+
+## 7.4 `node_modules`
+
+Installed packages ka code `node_modules` folder mein hota hai.
+
+Example:
+
+```text
+project/
+│
+├── node_modules/
+├── package.json
+├── package-lock.json
+└── index.js
+```
+
+> Generally `node_modules` ko GitHub repository mein commit nahi kiya jata. Iske badle `package.json` aur `package-lock.json` commit kiye jate hain.
+
+---
+
+## 7.5 `package-lock.json`
+
+`package-lock.json` dependencies ke exact installed versions aur dependency tree ki information maintain karta hai.
+
+Isse project ko different systems par more consistent dependency versions ke saath install karne mein help milti hai.
+
+---
+
+# 8. Popular npm Packages
+
+### Express
+
+Backend server aur APIs banane ke liye.
+
+```bash
+npm install express
+```
+
+### Nodemon
+
+Development ke time server ko automatically restart karne mein help karta hai.
+
+```bash
+npm install --save-dev nodemon
+```
+
+### Mongoose
+
+MongoDB ke saath kaam karne ke liye.
+
+```bash
+npm install mongoose
+```
+
+---
+
+# Node.js Modules
+
+## 9. Module kya hota hai?
+
+Node.js mein **Module** code ka ek reusable unit hota hai.
+
+Beginner level par simple way mein:
+
+> **Ek JavaScript file ko module ki tarah use karke hum code ko different files mein divide aur reuse kar sakte hain.**
+
+Agar hum pura project ek hi file mein likhenge:
+
+```text
+index.js
+   ↓
+Login
+Database
+Users
+Products
+Orders
+```
+
+to project difficult to maintain ho sakta hai.
+
+Isliye hum code ko different modules/files mein divide karte hain.
+
+Example:
+
+```text
+project/
+│
+├── app.js
+├── user.js
+├── product.js
+└── database.js
+```
+
+---
+
+# 10. Node.js Modules ke Types
+
+Node.js mein commonly 3 types ke modules samjhe jate hain:
+
+### 10.1 Core Modules
+
+Ye Node.js ke built-in modules hote hain.
+
+Inhe alag se install karne ki zarurat nahi hoti.
+
+Examples:
+
+```text
+fs
+http
+path
+os
+events
+```
+
+Example:
+
+```javascript
+const fs = require('fs');
+```
+
+---
+
+### 10.2 Local Modules
+
+Ye modules hum khud apne project ke liye create karte hain.
+
+Example:
+
+```text
+project/
+│
+├── app.js
+└── calculator.js
+```
+
+`calculator.js`:
+
+```javascript
+const add = (a, b) => {
+  return a + b;
+};
+
+module.exports = add;
+```
+
+`app.js`:
+
+```javascript
+const add = require('./calculator');
+
+console.log(add(10, 20));
+```
+
+Output:
+
+```text
+30
+```
+
+---
+
+### 10.3 Third-Party Modules
+
+Ye modules other developers/organizations ke packages hote hain.
+
+Inhe generally npm se install kiya jata hai.
+
+Examples:
+
+```text
+express
+mongoose
+axios
+nodemon
+```
+
+Example:
+
+```bash
+npm install express
+```
+
+---
+
+# Express.js Params
+
+## 11. Params kya hote hain?
+
+Express.js mein **params** ka use URL ke **dynamic values** ko receive karne ke liye hota hai.
+
+For example, agar hume different products ki ID ke basis par data chahiye:
+
+```text
+/product/101
+/product/102
+/product/103
+```
+
+Hum har ID ke liye alag route nahi banayenge.
+
+Instead, hum ek dynamic route bana sakte hain:
+
+```text
+/product/:id
+```
+
+Yahan `:id` ek **Route Parameter** hai.
+
+---
+
+# 12. `req.params`
+
+Express.js mein URL ke route parameters ko:
+
+```javascript
+req.params
+```
+
+se access kiya jata hai.
+
+Example:
+
+```javascript
+const express = require('express');
+
 const app = express();
 
-// यहाँ ':id' एक Route Parameter (param) है
 app.get('/product/:id', (req, res) => {
-    // req.params की मदद से URL से 'id' को निकाला जाता है
-    const productId = req.params.id; 
-    
-    res.send("आप प्रोडक्ट नंबर " + productId + " देख रहे हैं।");
+  const productId = req.params.id;
+
+  res.send(`Aap product number ${productId} dekh rahe hain.`);
 });
 
-app.listen(3000, () => console.log("सर्वर चालू है..."));
-Use code with caution.यदि कोई यूजर अपने ब्राउज़र में localhost:3000/product/456 खोलेगा, तो स्क्रीन पर दिखेगा: "आप प्रोडक्ट नंबर 456 देख रहे हैं।"req.params की मुख्य विशेषताएं:पहचान (Syntax): रूट डिफाइन करते समय हमेशा कोलन (:) का इस्तेमाल होता है (जैसे: /:username, /:id)।ऑब्जेक्ट (Object): req.params एक जावास्क्रिप्ट ऑब्जेक्ट होता है, जिसमें आपके द्वारा दिए गए नाम की की (Key) और वैल्यू (Value) स्टोर होती है।मल्टीपल पैरामीटर्स: आप एक ही URL में एक से ज्यादा पैरामीटर्स भी ले सकते हैं।उदाहरण रूट: /flights/:from/:toअगर URL हो /flights/delhi/mumbai, तो req.params.from की वैल्यू "delhi" होगी और req.params.to की वैल्यू "mumbai"।
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+```
+
+Agar browser mein request karein:
+
+```text
+http://localhost:3000/product/456
+```
+
+To:
+
+```javascript
+req.params.id
+```
+
+ki value hogi:
+
+```text
+456
+```
+
+Response:
+
+```text
+Aap product number 456 dekh rahe hain.
+```
+
+---
+
+# 13. Params ka Syntax
+
+Route mein dynamic parameter define karne ke liye `:` use karte hain.
+
+Example:
+
+```javascript
+app.get('/user/:username', (req, res) => {
+  console.log(req.params.username);
+});
+```
+
+Agar URL hai:
+
+```text
+/user/viraj
+```
+
+to:
+
+```javascript
+req.params.username
+```
+
+ki value hogi:
+
+```text
+viraj
+```
+
+---
+
+# 14. Multiple Route Parameters
+
+Ek route mein multiple parameters bhi use kar sakte hain.
+
+Example:
+
+```javascript
+app.get('/flights/:from/:to', (req, res) => {
+  const from = req.params.from;
+  const to = req.params.to;
+
+  res.send(`Flight from ${from} to ${to}`);
+});
+```
+
+Agar URL hai:
+
+```text
+/flights/delhi/mumbai
+```
+
+to:
+
+```javascript
+req.params.from
+```
+
+ki value:
+
+```text
+delhi
+```
+
+Aur:
+
+```javascript
+req.params.to
+```
+
+ki value:
+
+```text
+mumbai
+```
+
+Response:
+
+```text
+Flight from delhi to mumbai
+```
+
+---
+
+# 15. Quick Revision
+
+## Node.js
+
+```text
+Node.js = JavaScript Runtime Environment
+```
+
+JavaScript ko browser ke bahar run karne ke liye use hota hai.
+
+---
+
+## npm
+
+```text
+npm = Node Package Manager
+```
+
+Packages ko install aur manage karne ke liye.
+
+---
+
+## Module
+
+```text
+Module = Reusable code unit
+```
+
+Code ko different files/modules mein organize aur reuse karne ke liye.
+
+---
+
+## Params
+
+```text
+Params = URL ke dynamic values
+```
+
+Example:
+
+```text
+/product/:id
+```
+
+URL:
+
+```text
+/product/101
+```
+
+Access:
+
+```javascript
+req.params.id
+```
+
+Value:
+
+```text
+101
+```
+
+---
+
+# Important Interview Points
+
+### What is Node.js?
+
+> Node.js is a JavaScript runtime environment built on the V8 JavaScript engine that allows us to run JavaScript outside the browser, mainly for server-side applications.
+
+### What is npm?
+
+> npm is the package manager and registry ecosystem commonly used with Node.js to install and manage packages and dependencies.
+
+### What is a Module?
+
+> A module is a reusable unit of code that helps us organize an application into smaller and maintainable parts.
+
+### What are `req.params`?
+
+> `req.params` is an object in Express.js that contains route parameters extracted from the URL.
+
+Example:
+
+```javascript
+app.get('/user/:id', (req, res) => {
+  console.log(req.params.id);
+});
+```
+
+For:
+
+```text
+/user/101
+```
+
+Output:
+
+```text
+101
+```
