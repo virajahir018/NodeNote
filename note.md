@@ -161,4 +161,4 @@ const order = await Order.find().populate("user");
 ### 7. Multer? 
 
 * multer ek middleware hai jo frontend ya Postman se aane wali multipart/form-data files ko handle karta hai.
-* Example: user product add karte waqt 3 images select karta hai aur backend ko bhejta hai, toh Multer un files ko receive karta hai.
+* **Example**: user product add karte waqt 3 images select karta hai aur backend ko bhejta hai, toh Multer un files ko receive karta hai.
