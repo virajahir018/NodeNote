@@ -1,381 +1,682 @@
 # Node.js Notes
 
-## 1. What is Node.js?
+## 1. Node.js kya hai?
 
-### English
+**Node.js** ka use mainly **server-side (Backend) web development** ke liye kiya jata hai.
 
-Node.js is a **JavaScript runtime environment** that allows us to run JavaScript outside the browser, mainly on the server side.
+Node.js koi programming language nahi hai. Ye ek **JavaScript Runtime Environment** hai jo JavaScript code ko browser ke bahar, yani **computer ya server** par run karne ki permission deta hai.
 
-### Hindi
+### Simple Definition
 
-Node.js ek **JavaScript runtime environment** hai, jiske through hum JavaScript ko browser ke bahar, server par run kar sakte hain.
-
----
-
-## 2. Why use Node.js?
-
-### English
-
-Node.js is used to build **fast and scalable backend applications and APIs**.
-
-### Key Reasons to Use Node.js
-
-#### 1. JavaScript on the Server
-
-Node.js allows us to use JavaScript for **backend development**.
-
-#### 2. Asynchronous and Non-blocking
-
-Node.js can handle **I/O operations** without making the main JavaScript execution wait for each operation.
-
-#### 3. Good for APIs
-
-Node.js with **Express.js** makes it easy to create **REST APIs**.
-
-#### 4. Scalable
-
-Its **event-driven architecture** is suitable for applications that handle many concurrent I/O requests.
-
-#### 5. Same Language for Frontend and Backend
-
-We can use **JavaScript/TypeScript** for both the frontend and backend.
-
-For example:
-
-* React → Frontend
-* Node.js → Backend
-
-#### 6. Large npm Ecosystem
-
-npm provides a huge number of packages for:
-
-* Authentication
-* Databases
-* Validation
-* File uploads
-* API development
-* And many other features
-
-### Hindi
-
-Node.js ka use mainly **fast aur scalable backend applications aur APIs** banane ke liye hota hai.
+> **Node.js is a JavaScript Runtime Environment that allows us to run JavaScript outside the browser.**
 
 ---
 
-## 3. Node.js vs Browser JavaScript
+## 2. Node.js ka use kyu karte hain?
 
-### English
+### 2.1 Frontend aur Backend ke liye ek hi language
 
-**Browser JavaScript** is mainly used to create interactive **frontend applications**.
+Node.js ki help se hum **Frontend aur Backend dono mein JavaScript** use kar sakte hain.
 
-**Node.js** allows JavaScript to run **outside the browser** and is mainly used for:
+Pehle developers ko:
 
-* Backend development
-* APIs
-* Server-side applications
+* Frontend → JavaScript
+* Backend → PHP / Python / Java
 
-### Simple Difference
+jaise different languages use karni padti thi.
 
-| Browser JavaScript       | Node.js                   |
-| ------------------------ | ------------------------- |
-| Runs in the browser      | Runs outside the browser  |
-| Mainly used for frontend | Mainly used for backend   |
-| Works with DOM           | Does not have browser DOM |
-| Used for UI interactions | Used for servers and APIs |
-| Uses browser APIs        | Uses Node.js APIs         |
+Node.js ke saath:
 
----
-
-## 4. Node.js Installation & npm
-
-### English
-
-Node.js is installed from the **official Node.js website**.
-
-When Node.js is installed, **npm (Node Package Manager)** is also installed automatically.
-
-npm is used to:
-
-* Install packages
-* Manage dependencies
-* Update packages
-* Remove packages
-* Run project scripts
-
-### Check Node.js Version
-
-```bash
-node -v
+```text
+Frontend  → JavaScript
+Backend   → JavaScript
 ```
 
-### Check npm Version
-
-```bash
-npm -v
-```
-
-### Hindi
-
-Node.js ko install karne ke liye official Node.js website se Node.js download aur install karte hain.
-
-Node.js ke saath **npm automatically install** ho jata hai.
-
-npm ka use packages aur dependencies ko install aur manage karne ke liye hota hai.
+Is approach ko **Full Stack JavaScript Development** kaha ja sakta hai.
 
 ---
 
-## 5. package.json
+### 2.2 Fast Performance
 
-### English
+Node.js **Google Chrome ke V8 JavaScript Engine** par based hai.
 
-`package.json` is a **configuration file** of a Node.js project.
+V8 JavaScript code ko efficiently execute karta hai, jiski wajah se Node.js applications fast perform kar sakti hain.
 
-It contains important information about the project, such as:
+```text
+JavaScript Code
+       ↓
+    V8 Engine
+       ↓
+   Execution
+```
 
-* Project name
-* Version
-* Scripts
-* Dependencies
-* Project configuration
+---
+
+### 2.3 Non-Blocking I/O aur Asynchronous Model
+
+Node.js **event-driven** aur **non-blocking I/O model** use karta hai.
+
+Agar koi operation time leta hai, jaise:
+
+* File read karna
+* Database se data lana
+* Network request
+* API call
+
+to Node.js us operation ke complete hone ka wait karke pura server block nahi karta.
+
+Example:
+
+```text
+Request 1 → Database operation → Background
+Request 2 → Process
+Request 3 → Process
+Request 4 → Process
+```
+
+Is wajah se Node.js I/O-heavy applications ke liye useful hai.
+
+> **Note:** "Node.js single-threaded hai" ka matlab ye nahi hai ki Node.js mein sirf ek hi thread hota hai. JavaScript execution mainly main thread par hota hai, jabki kuch asynchronous operations libuv ke thread pool ya OS facilities ka use kar sakte hain.
+
+---
+
+## 3. Node.js ka use kaha hota hai?
+
+Node.js ka use kai types ke applications banane mein hota hai:
+
+* REST APIs
+* Backend Servers
+* Real-time Applications
+* Chat Applications
+* Streaming Applications
+* Online Games
+* Collaborative Applications
+* Microservices
 
 ### Example
+
+```text
+Client
+  ↓
+Node.js Server
+  ↓
+Database
+  ↓
+Response
+```
+
+---
+
+# npm — Node Package Manager
+
+## 4. npm kya hai?
+
+**npm** ka commonly used full form **Node Package Manager** hai.
+
+npm Node.js ecosystem ka **package manager aur package registry** hai.
+
+Node.js install karne par normally npm bhi install ho jata hai.
+
+Simple words mein:
+
+> **npm ki help se hum apne project mein external packages install, manage aur use kar sakte hain.**
+
+---
+
+## 5. npm ke do important parts
+
+### 5.1 npm Registry
+
+npm Registry ek online repository hai jahan developers packages publish karte hain.
+
+Example packages:
+
+* Express
+* Mongoose
+* Nodemon
+* Axios
+
+---
+
+### 5.2 npm CLI
+
+npm CLI ki help se hum terminal ya CMD se packages ko manage karte hain.
+
+Example:
+
+```bash
+npm install express
+```
+
+---
+
+# 6. npm ka use kyu karte hain?
+
+Suppose hume apne application mein authentication system banana hai.
+
+Agar hum sab kuch scratch se banayenge, to kaafi time lag sakta hai.
+
+npm ki help se hum existing packages install kar sakte hain.
+
+Example:
+
+```bash
+npm install express
+```
+
+Isse Express package project mein add ho jayega.
+
+---
+
+# 7. Important npm Files & Commands
+
+| Command / File          | Purpose                                            |
+| ----------------------- | -------------------------------------------------- |
+| `npm init`              | New Node.js project initialize karta hai           |
+| `npm install <package>` | Package install karta hai                          |
+| `package.json`          | Project aur dependencies ki information rakhta hai |
+| `package-lock.json`     | Installed dependency versions ko lock karta hai    |
+| `node_modules`          | Installed packages ka code store karta hai         |
+
+---
+
+## 7.1 `npm init`
+
+Project initialize karne ke liye:
+
+```bash
+npm init
+```
+
+Ye `package.json` file create karta hai.
+
+Quick setup ke liye:
+
+```bash
+npm init -y
+```
+
+---
+
+## 7.2 `package.json`
+
+`package.json` ko aap project ki **configuration / manifest file** samajh sakte ho.
+
+Example:
 
 ```json
 {
   "name": "my-project",
   "version": "1.0.0",
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
-    "express": "^5.0.0",
-    "mongoose": "^8.0.0"
+    "express": "^5.0.0"
   }
 }
 ```
 
-### Hindi
-
-`package.json` Node.js project ki ek **configuration file** hoti hai.
-
-Isme project ki important information store hoti hai, jaise:
-
-* Project ka name
-* Version
-* Scripts
-* Dependencies
-* Project configuration
+Isme project ke baare mein information aur dependencies hoti hain.
 
 ---
 
-## 6. Modules
+## 7.3 `npm install`
 
-### English
+Package install karne ke liye:
 
-A **module** is a separate file or piece of code that contains specific functionality.
+```bash
+npm install express
+```
 
-Modules help us to:
+Iske baad package project ki dependencies mein add ho jata hai.
 
-* Organize code
-* Reuse code
-* Maintain code easily
-* Keep the project structured
+---
 
-For example, instead of writing everything in `server.js`, we can create separate files:
+## 7.4 `node_modules`
+
+Installed packages ka code `node_modules` folder mein hota hai.
+
+Example:
 
 ```text
 project/
 │
-├── server.js
+├── node_modules/
+├── package.json
+├── package-lock.json
+└── index.js
+```
+
+> Generally `node_modules` ko GitHub repository mein commit nahi kiya jata. Iske badle `package.json` aur `package-lock.json` commit kiye jate hain.
+
+---
+
+## 7.5 `package-lock.json`
+
+`package-lock.json` dependencies ke exact installed versions aur dependency tree ki information maintain karta hai.
+
+Isse project ko different systems par more consistent dependency versions ke saath install karne mein help milti hai.
+
+---
+
+# 8. Popular npm Packages
+
+### Express
+
+Backend server aur APIs banane ke liye.
+
+```bash
+npm install express
+```
+
+### Nodemon
+
+Development ke time server ko automatically restart karne mein help karta hai.
+
+```bash
+npm install --save-dev nodemon
+```
+
+### Mongoose
+
+MongoDB ke saath kaam karne ke liye.
+
+```bash
+npm install mongoose
+```
+
+---
+
+# Node.js Modules
+
+## 9. Module kya hota hai?
+
+Node.js mein **Module** code ka ek reusable unit hota hai.
+
+Beginner level par simple way mein:
+
+> **Ek JavaScript file ko module ki tarah use karke hum code ko different files mein divide aur reuse kar sakte hain.**
+
+Agar hum pura project ek hi file mein likhenge:
+
+```text
+index.js
+   ↓
+Login
+Database
+Users
+Products
+Orders
+```
+
+to project difficult to maintain ho sakta hai.
+
+Isliye hum code ko different modules/files mein divide karte hain.
+
+Example:
+
+```text
+project/
+│
+├── app.js
 ├── user.js
-└── product.js
+├── product.js
+└── database.js
 ```
-
-Then, we can export functionality from one file and import or require it into another file.
-
-### Hindi
-
-Module code ka ek **reusable part** hota hai jo usually separate file me rakha jata hai.
-
-Isse:
-
-* Code organize hota hai
-* Code reuse kar sakte hain
-* Code maintain karna easy hota hai
-* Project ka structure clean rehta hai
 
 ---
 
-## 7. CommonJS (CJS)
+# 10. Node.js Modules ke Types
 
-### English
+Node.js mein commonly 3 types ke modules samjhe jate hain:
 
-**CommonJS (CJS)** is a module system used in Node.js to import and export code between files.
+### 10.1 Core Modules
 
-CommonJS mainly uses:
+Ye Node.js ke built-in modules hote hain.
 
-* `require()` → to import a module
-* `module.exports` → to export a module
+Inhe alag se install karne ki zarurat nahi hoti.
 
-### Example
+Examples:
 
-**user.js**
-
-```js
-const name = "Viraj Ahir";
-
-module.exports = name;
+```text
+fs
+http
+path
+os
+events
 ```
 
-**server.js**
+Example:
 
-```js
-const name = require("./user");
-
-console.log(name);
+```javascript
+const fs = require('fs');
 ```
-
-### Hindi
-
-**CommonJS (CJS)** Node.js ka ek module system hai, jiska use ek file ke code ko doosri file me **export aur import** karne ke liye kiya jata hai.
-
-CommonJS me mainly:
-
-* `require()` → module ko import karne ke liye
-* `module.exports` → module ko export karne ke liye
 
 ---
 
-## 8. ESM (ECMAScript Modules)
+### 10.2 Local Modules
 
-### English
+Ye modules hum khud apne project ke liye create karte hain.
 
-**ESM (ECMAScript Modules)** is the modern JavaScript module system used to import and export code between files.
+Example:
 
-ESM mainly uses:
-
-* `export` → to export code
-* `import` → to import code
-
-### Example
-
-**user.js**
-
-```js
-export const name = "Viraj Ahir";
+```text
+project/
+│
+├── app.js
+└── calculator.js
 ```
 
-**server.js**
+`calculator.js`:
 
-```js
-import { name } from "./user.js";
+```javascript
+const add = (a, b) => {
+  return a + b;
+};
 
-console.log(name);
+module.exports = add;
 ```
 
-### Hindi
+`app.js`:
 
-**ESM (ECMAScript Modules)** JavaScript ka modern module system hai, jiska use ek file ke code ko doosri file me **export aur import** karne ke liye kiya jata hai.
+```javascript
+const add = require('./calculator');
 
-ESM me mainly:
+console.log(add(10, 20));
+```
 
-* `export` → code export karne ke liye
-* `import` → code import karne ke liye
+Output:
+
+```text
+30
+```
 
 ---
 
-## 9. Built-in Modules
+### 10.3 Third-Party Modules
 
-### English
+Ye modules other developers/organizations ke packages hote hain.
 
-**Built-in modules** are modules that are already provided by Node.js.
+Inhe generally npm se install kiya jata hai.
 
-We do not need to install them using npm.
+Examples:
 
-Some commonly used built-in modules are:
-
-| Module   | Use                                |
-| -------- | ---------------------------------- |
-| `fs`     | File System                        |
-| `http`   | Create HTTP servers                |
-| `path`   | Work with file and directory paths |
-| `os`     | Get operating system information   |
-| `url`    | Work with URLs                     |
-| `events` | Create and handle events           |
-
-### Example
-
-Using the `fs` module:
-
-```js
-const fs = require("fs");
-
-fs.writeFileSync("hello.txt", "Hello Node.js");
+```text
+express
+mongoose
+axios
+nodemon
 ```
 
-### Hindi
+Example:
 
-**Built-in modules** wo modules hain jo Node.js ke saath already available hote hain.
-
-Inhe use karne ke liye normally `npm install` karne ki zarurat nahi hoti.
-
-Common built-in modules:
-
-* `fs` → File System ke liye
-* `http` → HTTP server banane ke liye
-* `path` → File aur directory paths ke saath kaam karne ke liye
-* `os` → Operating system ki information ke liye
-* `url` → URLs ke saath kaam karne ke liye
-* `events` → Events create aur handle karne ke liye
+```bash
+npm install express
+```
 
 ---
 
-# Quick Revision
+# Express.js Params
 
-| Topic            | Short Answer                                   |
-| ---------------- | ---------------------------------------------- |
-| Node.js          | JavaScript runtime environment                 |
-| Why Node.js?     | Fast and scalable backend applications ke liye |
-| Browser JS       | Mainly frontend development                    |
-| npm              | Packages aur dependencies manage karne ke liye |
-| package.json     | Project ki configuration file                  |
-| Module           | Reusable piece of code                         |
-| CommonJS         | `require()` and `module.exports`               |
-| ESM              | `import` and `export`                          |
-| Built-in Modules | Node.js ke saath already available modules     |
+## 11. Params kya hote hain?
+
+Express.js mein **params** ka use URL ke **dynamic values** ko receive karne ke liye hota hai.
+
+For example, agar hume different products ki ID ke basis par data chahiye:
+
+```text
+/product/101
+/product/102
+/product/103
+```
+
+Hum har ID ke liye alag route nahi banayenge.
+
+Instead, hum ek dynamic route bana sakte hain:
+
+```text
+/product/:id
+```
+
+Yahan `:id` ek **Route Parameter** hai.
 
 ---
 
-# Interview Quick Answers
+# 12. `req.params`
+
+Express.js mein URL ke route parameters ko:
+
+```javascript
+req.params
+```
+
+se access kiya jata hai.
+
+Example:
+
+```javascript
+const express = require('express');
+
+const app = express();
+
+app.get('/product/:id', (req, res) => {
+  const productId = req.params.id;
+
+  res.send(`Aap product number ${productId} dekh rahe hain.`);
+});
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+```
+
+Agar browser mein request karein:
+
+```text
+http://localhost:3000/product/456
+```
+
+To:
+
+```javascript
+req.params.id
+```
+
+ki value hogi:
+
+```text
+456
+```
+
+Response:
+
+```text
+Aap product number 456 dekh rahe hain.
+```
+
+---
+
+# 13. Params ka Syntax
+
+Route mein dynamic parameter define karne ke liye `:` use karte hain.
+
+Example:
+
+```javascript
+app.get('/user/:username', (req, res) => {
+  console.log(req.params.username);
+});
+```
+
+Agar URL hai:
+
+```text
+/user/viraj
+```
+
+to:
+
+```javascript
+req.params.username
+```
+
+ki value hogi:
+
+```text
+viraj
+```
+
+---
+
+# 14. Multiple Route Parameters
+
+Ek route mein multiple parameters bhi use kar sakte hain.
+
+Example:
+
+```javascript
+app.get('/flights/:from/:to', (req, res) => {
+  const from = req.params.from;
+  const to = req.params.to;
+
+  res.send(`Flight from ${from} to ${to}`);
+});
+```
+
+Agar URL hai:
+
+```text
+/flights/delhi/mumbai
+```
+
+to:
+
+```javascript
+req.params.from
+```
+
+ki value:
+
+```text
+delhi
+```
+
+Aur:
+
+```javascript
+req.params.to
+```
+
+ki value:
+
+```text
+mumbai
+```
+
+Response:
+
+```text
+Flight from delhi to mumbai
+```
+
+---
+
+# 15. Quick Revision
+
+## Node.js
+
+```text
+Node.js = JavaScript Runtime Environment
+```
+
+JavaScript ko browser ke bahar run karne ke liye use hota hai.
+
+---
+
+## npm
+
+```text
+npm = Node Package Manager
+```
+
+Packages ko install aur manage karne ke liye.
+
+---
+
+## Module
+
+```text
+Module = Reusable code unit
+```
+
+Code ko different files/modules mein organize aur reuse karne ke liye.
+
+---
+
+## Params
+
+```text
+Params = URL ke dynamic values
+```
+
+Example:
+
+```text
+/product/:id
+```
+
+URL:
+
+```text
+/product/101
+```
+
+Access:
+
+```javascript
+req.params.id
+```
+
+Value:
+
+```text
+101
+```
+
+---
+
+# Important Interview Points
 
 ### What is Node.js?
 
-> Node.js is a JavaScript runtime environment that allows us to run JavaScript outside the browser, mainly on the server side.
-
-### Why do we use Node.js?
-
-> Node.js is used to build fast, scalable backend applications and APIs.
+> Node.js is a JavaScript runtime environment built on the V8 JavaScript engine that allows us to run JavaScript outside the browser, mainly for server-side applications.
 
 ### What is npm?
 
-> npm is the Node Package Manager used to install and manage packages and dependencies in a Node.js project.
+> npm is the package manager and registry ecosystem commonly used with Node.js to install and manage packages and dependencies.
 
-### What is package.json?
+### What is a Module?
 
-> package.json is a configuration file that contains information about a Node.js project, including scripts, dependencies, name, and version.
+> A module is a reusable unit of code that helps us organize an application into smaller and maintainable parts.
 
-### What is a module?
+### What are `req.params`?
 
-> A module is a reusable piece of code that helps us organize and maintain our application.
+> `req.params` is an object in Express.js that contains route parameters extracted from the URL.
 
-### What is CommonJS?
+Example:
 
-> CommonJS is a Node.js module system that uses `require()` for importing and `module.exports` for exporting.
+```javascript
+app.get('/user/:id', (req, res) => {
+  console.log(req.params.id);
+});
+```
 
-### What is ESM?
+For:
 
-> ESM is the modern JavaScript module system that uses `import` and `export`.
+```text
+/user/101
+```
 
-### What are built-in modules?
+Output:
 
-> Built-in modules are modules provided by Node.js that can be used without installing them through npm.
+```text
+101
+```
