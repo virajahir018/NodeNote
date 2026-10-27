@@ -155,3 +155,8 @@ const order = await Order.find().populate("user");
 
 ### # Configuration & .env (Environment)
 * **Hinglish:** **Configuration** का मतलब है प्रोजेक्ट की महत्वपूर्ण सेटिंग्स को एक जगह संभालना। **.env** एक गुप्त फ़ाइल होती है जिसमें हम Secret Keys, DB URLs आदि रखते हैं। इसे `dotenv` पैकेज और `process.env` की मदद से रीड किया जाता है।
+
+### 7. Multer? 
+
+* multer ek middleware hai jo frontend ya Postman se aane wali multipart/form-data files ko handle karta hai.
+* Example: user product add karte waqt 3 images select karta hai aur backend ko bhejta hai, toh Multer un files ko receive karta hai.
